@@ -21,3 +21,15 @@ C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.G
 C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.CoreCompileInputs.cache
 C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.exe
 C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.pdb
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csprojAssemblyReference.cache
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.About.resources
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.DiChuyen.resources
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.Form1.resources
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.Properties.Resources.resources
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.GenerateResource.cache
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.CoreCompileInputs.cache
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.exe
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.pdb
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\bin\Debug\Attack_ATMB.exe.config
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\bin\Debug\Attack_ATMB.exe
+D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\bin\Debug\Attack_ATMB.pdb

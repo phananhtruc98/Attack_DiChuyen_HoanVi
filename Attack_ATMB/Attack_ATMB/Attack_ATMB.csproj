@@ -76,6 +76,8 @@
     <Compile Include="HuanLuyen.Designer.cs">
       <DependentUpon>HuanLuyen.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyLibrary\Ceasar.cs" />
+    <Compile Include="MyLibrary\TranspositionCipher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TanCong.cs">
