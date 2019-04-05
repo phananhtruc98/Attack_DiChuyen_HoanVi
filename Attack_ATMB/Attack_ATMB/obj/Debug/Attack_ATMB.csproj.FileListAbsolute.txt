@@ -1,0 +1,11 @@
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\bin\Debug\Attack_ATMB.exe.config
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\bin\Debug\Attack_ATMB.exe
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\bin\Debug\Attack_ATMB.pdb
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csprojAssemblyReference.cache
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.Form1.resources
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.Properties.Resources.resources
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.GenerateResource.cache
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.CoreCompileInputs.cache
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.exe
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.pdb
+C:\Users\anhtr\source\repos\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.About.resources
