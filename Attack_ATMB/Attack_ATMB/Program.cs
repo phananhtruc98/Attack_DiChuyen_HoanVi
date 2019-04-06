@@ -18,7 +18,10 @@ namespace Attack_ATMB
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             MessageBox.Show("Mở file Program.cs để xem cách sử dụng Thuật mã/giải. Nhớ Debug");
-            string dichChuyen_Input = "Hello mấy em";
+            string input =
+                FileHelper.ReadFile(
+                    @"D:\Hien\School\An toàn bảo mật hệ thống thông tin\BT7\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\input.txt");
+            string dichChuyen_Input = input; //"Hello mấy em";
             string dichChuyen_Z = "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'";
             int dichChuyen_Key = 3;
             string dichChuyen_DaMaHoa = Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
