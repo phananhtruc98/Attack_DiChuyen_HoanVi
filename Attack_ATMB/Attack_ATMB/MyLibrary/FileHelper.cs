@@ -15,9 +15,13 @@ namespace Attack_ATMB.MyLibrary
             return File.ReadAllText(path);
         }
 
-        public static void WriteFile(string path, string[] lines)
+        public static void WriteFile(string path, string encryptName, string z, string k, string s)
         {
-            File.WriteAllLines(path, lines);
+            File.WriteAllText(path, encryptName + Environment.NewLine + z + Environment.NewLine + k + Environment.NewLine + s);
+        }
+        public static void WriteFile(string path, string encryptName, string z, string s)
+        {
+            File.WriteAllText(path, encryptName + Environment.NewLine + z + Environment.NewLine + s);
         }
     }
 

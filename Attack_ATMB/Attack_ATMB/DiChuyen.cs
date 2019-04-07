@@ -108,7 +108,7 @@ namespace Attack_ATMB
                         filenameoutputMahoaChallenge = "Challenge_10kb_MaNhom.txt";
                         break;
                 }
-                FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\"+ filenameoutputMahoa + "", outputlines);
+                //FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\"+ filenameoutputMahoa + "", outputlines);
                 txtOutputName.Text = System.IO.Path.GetFileName(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoa + "");
                 FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoaChallenge + "", outputMahoaChallenge);
                 txtOutputChallengeName.Text = System.IO.Path.GetFileName(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoaChallenge + "");
