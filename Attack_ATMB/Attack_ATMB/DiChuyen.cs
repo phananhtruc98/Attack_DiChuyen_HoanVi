@@ -102,7 +102,7 @@ namespace Attack_ATMB
                         filenameoutputMahoa = "Enc_10kb_11.txt";
                         break;
                 }
-                FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\"+ filenameoutputMahoa + "", outputlines);
+                //FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\"+ filenameoutputMahoa + "", outputlines);
                 txtOutputName.Text = System.IO.Path.GetFileName(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoa + "");
             }
             else
