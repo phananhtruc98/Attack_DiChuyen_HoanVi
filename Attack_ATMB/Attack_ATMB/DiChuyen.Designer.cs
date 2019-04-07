@@ -42,6 +42,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtOutputChallengeName = new System.Windows.Forms.TextBox();
+            this.txtOutputName = new System.Windows.Forms.TextBox();
+            this.btnOpenFileChallenge = new System.Windows.Forms.Button();
+            this.btnOpenFileEncrypt = new System.Windows.Forms.Button();
+            this.txtOutputMaHoaFile = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtPathInputMaHoa = new System.Windows.Forms.TextBox();
@@ -52,25 +57,22 @@
             this.btnMaHoaFile = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnGiaiMaFile = new System.Windows.Forms.Button();
-            this.txtPathInputGiaiMa = new System.Windows.Forms.TextBox();
-            this.btnChonTepGiaiMa = new System.Windows.Forms.Button();
-            this.txtOutputMaHoaFile = new System.Windows.Forms.RichTextBox();
-            this.btnOpenFileEncrypt = new System.Windows.Forms.Button();
-            this.btnOpenFileChallenge = new System.Windows.Forms.Button();
-            this.txtOutputName = new System.Windows.Forms.TextBox();
-            this.txtOutputChallengeName = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtPathInputGiaiMa = new System.Windows.Forms.TextBox();
+            this.btnChonTepGiaiMa = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.btnGiaiMaFile = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtOuputMahoaChallenge = new System.Windows.Forms.RichTextBox();
+            this.txtKeyMahoa = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -247,6 +249,50 @@
             this.panel1.Size = new System.Drawing.Size(296, 140);
             this.panel1.TabIndex = 3;
             // 
+            // txtOutputChallengeName
+            // 
+            this.txtOutputChallengeName.Location = new System.Drawing.Point(25, 95);
+            this.txtOutputChallengeName.Name = "txtOutputChallengeName";
+            this.txtOutputChallengeName.Size = new System.Drawing.Size(126, 20);
+            this.txtOutputChallengeName.TabIndex = 7;
+            // 
+            // txtOutputName
+            // 
+            this.txtOutputName.Location = new System.Drawing.Point(25, 57);
+            this.txtOutputName.Name = "txtOutputName";
+            this.txtOutputName.Size = new System.Drawing.Size(126, 20);
+            this.txtOutputName.TabIndex = 6;
+            // 
+            // btnOpenFileChallenge
+            // 
+            this.btnOpenFileChallenge.Location = new System.Drawing.Point(157, 95);
+            this.btnOpenFileChallenge.Name = "btnOpenFileChallenge";
+            this.btnOpenFileChallenge.Size = new System.Drawing.Size(121, 23);
+            this.btnOpenFileChallenge.TabIndex = 5;
+            this.btnOpenFileChallenge.Text = "Mở file(Challenge)";
+            this.btnOpenFileChallenge.UseVisualStyleBackColor = true;
+            this.btnOpenFileChallenge.Click += new System.EventHandler(this.btnOpenFileChallenge_Click);
+            // 
+            // btnOpenFileEncrypt
+            // 
+            this.btnOpenFileEncrypt.Location = new System.Drawing.Point(157, 57);
+            this.btnOpenFileEncrypt.Name = "btnOpenFileEncrypt";
+            this.btnOpenFileEncrypt.Size = new System.Drawing.Size(121, 23);
+            this.btnOpenFileEncrypt.TabIndex = 4;
+            this.btnOpenFileEncrypt.Text = "Mở file";
+            this.btnOpenFileEncrypt.UseVisualStyleBackColor = true;
+            this.btnOpenFileEncrypt.Click += new System.EventHandler(this.btnOpenFileEncrypt_Click);
+            // 
+            // txtOutputMaHoaFile
+            // 
+            this.txtOutputMaHoaFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtOutputMaHoaFile.Location = new System.Drawing.Point(0, 24);
+            this.txtOutputMaHoaFile.Name = "txtOutputMaHoaFile";
+            this.txtOutputMaHoaFile.Size = new System.Drawing.Size(296, 116);
+            this.txtOutputMaHoaFile.TabIndex = 3;
+            this.txtOutputMaHoaFile.Text = "";
+            this.txtOutputMaHoaFile.Visible = false;
+            // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -260,6 +306,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.txtOuputMahoaChallenge);
             this.panel3.Controls.Add(this.txtPathInputMaHoa);
             this.panel3.Controls.Add(this.btnChonTep);
             this.panel3.Controls.Add(this.label5);
@@ -310,6 +357,7 @@
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.txtKeyMahoa);
             this.panel8.Controls.Add(this.btnMaHoaFile);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(305, 3);
@@ -359,143 +407,6 @@
             this.panel9.Size = new System.Drawing.Size(296, 136);
             this.panel9.TabIndex = 3;
             // 
-            // label6
-            // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(296, 24);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Đã giải mã";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel10
-            // 
-            this.panel10.Controls.Add(this.txtPathInputGiaiMa);
-            this.panel10.Controls.Add(this.btnChonTepGiaiMa);
-            this.panel10.Controls.Add(this.label7);
-            this.panel10.Controls.Add(this.panel11);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(3, 3);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(296, 136);
-            this.panel10.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(296, 24);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Giải mã";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel11
-            // 
-            this.panel11.AutoSize = true;
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel11.Location = new System.Drawing.Point(0, 0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(296, 0);
-            this.panel11.TabIndex = 1;
-            // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.btnGiaiMaFile);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(305, 3);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(145, 136);
-            this.panel12.TabIndex = 2;
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnGiaiMaFile
-            // 
-            this.btnGiaiMaFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGiaiMaFile.Location = new System.Drawing.Point(16, 61);
-            this.btnGiaiMaFile.Name = "btnGiaiMaFile";
-            this.btnGiaiMaFile.Size = new System.Drawing.Size(118, 23);
-            this.btnGiaiMaFile.TabIndex = 2;
-            this.btnGiaiMaFile.Text = "Giải mã";
-            this.btnGiaiMaFile.UseVisualStyleBackColor = true;
-            this.btnGiaiMaFile.Click += new System.EventHandler(this.btnGiaiMaFile_Click);
-            // 
-            // txtPathInputGiaiMa
-            // 
-            this.txtPathInputGiaiMa.Location = new System.Drawing.Point(10, 69);
-            this.txtPathInputGiaiMa.Name = "txtPathInputGiaiMa";
-            this.txtPathInputGiaiMa.Size = new System.Drawing.Size(283, 20);
-            this.txtPathInputGiaiMa.TabIndex = 9;
-            // 
-            // btnChonTepGiaiMa
-            // 
-            this.btnChonTepGiaiMa.Location = new System.Drawing.Point(10, 40);
-            this.btnChonTepGiaiMa.Name = "btnChonTepGiaiMa";
-            this.btnChonTepGiaiMa.Size = new System.Drawing.Size(75, 23);
-            this.btnChonTepGiaiMa.TabIndex = 8;
-            this.btnChonTepGiaiMa.Text = "Chọn tệp";
-            this.btnChonTepGiaiMa.UseVisualStyleBackColor = true;
-            // 
-            // txtOutputMaHoaFile
-            // 
-            this.txtOutputMaHoaFile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtOutputMaHoaFile.Location = new System.Drawing.Point(0, 24);
-            this.txtOutputMaHoaFile.Name = "txtOutputMaHoaFile";
-            this.txtOutputMaHoaFile.Size = new System.Drawing.Size(296, 116);
-            this.txtOutputMaHoaFile.TabIndex = 3;
-            this.txtOutputMaHoaFile.Text = "";
-            this.txtOutputMaHoaFile.Visible = false;
-            // 
-            // btnOpenFileEncrypt
-            // 
-            this.btnOpenFileEncrypt.Location = new System.Drawing.Point(157, 57);
-            this.btnOpenFileEncrypt.Name = "btnOpenFileEncrypt";
-            this.btnOpenFileEncrypt.Size = new System.Drawing.Size(121, 23);
-            this.btnOpenFileEncrypt.TabIndex = 4;
-            this.btnOpenFileEncrypt.Text = "Mở file";
-            this.btnOpenFileEncrypt.UseVisualStyleBackColor = true;
-            this.btnOpenFileEncrypt.Click += new System.EventHandler(this.btnOpenFileEncrypt_Click);
-            // 
-            // btnOpenFileChallenge
-            // 
-            this.btnOpenFileChallenge.Location = new System.Drawing.Point(157, 95);
-            this.btnOpenFileChallenge.Name = "btnOpenFileChallenge";
-            this.btnOpenFileChallenge.Size = new System.Drawing.Size(121, 23);
-            this.btnOpenFileChallenge.TabIndex = 5;
-            this.btnOpenFileChallenge.Text = "Mở file(Challenge)";
-            this.btnOpenFileChallenge.UseVisualStyleBackColor = true;
-            // 
-            // txtOutputName
-            // 
-            this.txtOutputName.Location = new System.Drawing.Point(25, 57);
-            this.txtOutputName.Name = "txtOutputName";
-            this.txtOutputName.Size = new System.Drawing.Size(126, 20);
-            this.txtOutputName.TabIndex = 6;
-            // 
-            // txtOutputChallengeName
-            // 
-            this.txtOutputChallengeName.Location = new System.Drawing.Point(25, 95);
-            this.txtOutputChallengeName.Name = "txtOutputChallengeName";
-            this.txtOutputChallengeName.Size = new System.Drawing.Size(126, 20);
-            this.txtOutputChallengeName.TabIndex = 7;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(296, 112);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(34, 92);
@@ -528,6 +439,117 @@
             this.button2.Text = "Mở file";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(296, 112);
+            this.richTextBox1.TabIndex = 4;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.Visible = false;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(296, 24);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Đã giải mã";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txtPathInputGiaiMa);
+            this.panel10.Controls.Add(this.btnChonTepGiaiMa);
+            this.panel10.Controls.Add(this.label7);
+            this.panel10.Controls.Add(this.panel11);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel10.Location = new System.Drawing.Point(3, 3);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(296, 136);
+            this.panel10.TabIndex = 1;
+            // 
+            // txtPathInputGiaiMa
+            // 
+            this.txtPathInputGiaiMa.Location = new System.Drawing.Point(10, 69);
+            this.txtPathInputGiaiMa.Name = "txtPathInputGiaiMa";
+            this.txtPathInputGiaiMa.Size = new System.Drawing.Size(283, 20);
+            this.txtPathInputGiaiMa.TabIndex = 9;
+            // 
+            // btnChonTepGiaiMa
+            // 
+            this.btnChonTepGiaiMa.Location = new System.Drawing.Point(10, 40);
+            this.btnChonTepGiaiMa.Name = "btnChonTepGiaiMa";
+            this.btnChonTepGiaiMa.Size = new System.Drawing.Size(75, 23);
+            this.btnChonTepGiaiMa.TabIndex = 8;
+            this.btnChonTepGiaiMa.Text = "Chọn tệp";
+            this.btnChonTepGiaiMa.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(296, 24);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Giải mã";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel11
+            // 
+            this.panel11.AutoSize = true;
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel11.Location = new System.Drawing.Point(0, 0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(296, 0);
+            this.panel11.TabIndex = 1;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.btnGiaiMaFile);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(305, 3);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(145, 136);
+            this.panel12.TabIndex = 2;
+            // 
+            // btnGiaiMaFile
+            // 
+            this.btnGiaiMaFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGiaiMaFile.Location = new System.Drawing.Point(16, 61);
+            this.btnGiaiMaFile.Name = "btnGiaiMaFile";
+            this.btnGiaiMaFile.Size = new System.Drawing.Size(118, 23);
+            this.btnGiaiMaFile.TabIndex = 2;
+            this.btnGiaiMaFile.Text = "Giải mã";
+            this.btnGiaiMaFile.UseVisualStyleBackColor = true;
+            this.btnGiaiMaFile.Click += new System.EventHandler(this.btnGiaiMaFile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtOuputMahoaChallenge
+            // 
+            this.txtOuputMahoaChallenge.Location = new System.Drawing.Point(52, 117);
+            this.txtOuputMahoaChallenge.Name = "txtOuputMahoaChallenge";
+            this.txtOuputMahoaChallenge.Size = new System.Drawing.Size(8, 8);
+            this.txtOuputMahoaChallenge.TabIndex = 8;
+            this.txtOuputMahoaChallenge.Text = "";
+            this.txtOuputMahoaChallenge.Visible = false;
+            // 
+            // txtKeyMahoa
+            // 
+            this.txtKeyMahoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKeyMahoa.Location = new System.Drawing.Point(21, 31);
+            this.txtKeyMahoa.Name = "txtKeyMahoa";
+            this.txtKeyMahoa.Size = new System.Drawing.Size(100, 20);
+            this.txtKeyMahoa.TabIndex = 3;
+            // 
             // DiChuyen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -550,6 +572,7 @@
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
@@ -605,5 +628,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtOuputMahoaChallenge;
+        private System.Windows.Forms.TextBox txtKeyMahoa;
     }
 }

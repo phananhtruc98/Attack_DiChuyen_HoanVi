@@ -13,31 +13,33 @@ namespace Attack_ATMB
 {
     public partial class DiChuyen : Form
     {
+        int dichChuyen_Key = 3;
+
         string s;
         string inputMahoa;
         string filenameinputMahoa;
         string filenameoutputMahoa;
+        string filenameoutputMahoaChallenge;
         public DiChuyen()
         {
 
             InitializeComponent();
             s ="Dịch chuyển" + Environment.NewLine + "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'"
-                + Environment.NewLine+ "3" + Environment.NewLine;
-            txtOutputMaHoaFile.Text = s;
-
+                + Environment.NewLine;
+            txtOutputMaHoaFile.Text = s; 
         }
 
 
         private void btnMaHoa_Click_1(object sender, EventArgs e)
         {
-            int dichChuyen_Key = 3;
+
+            dichChuyen_Key = Convert.ToInt32(txtKeyMahoa.Text);
             string dichChuyen_Z = "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'";
             OutputText.Text = Ceasar.Encipher(InputText.Text, dichChuyen_Key, dichChuyen_Z);
         }
 
         private void btnGiaiMa_Click(object sender, EventArgs e)
         {
-            int dichChuyen_Key = 3;
             string dichChuyen_Z = "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'";
             OutputText.Text = Ceasar.Decipher(InputText.Text, dichChuyen_Key, dichChuyen_Z);
         }
@@ -76,9 +78,9 @@ namespace Attack_ATMB
             {
                 string dichChuyen_Input = inputMahoa;
                 string dichChuyen_Z = "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'";
-                int dichChuyen_Key = 3;
-                txtOutputMaHoaFile.Text = s + Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
-                string outputfile = Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
+                txtOutputMaHoaFile.Text = s + dichChuyen_Key.ToString() + Environment.NewLine + Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
+                txtOuputMahoaChallenge.Text = s + Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
+                string[] outputMahoaChallenge = txtOuputMahoaChallenge.Lines;
                 string[] outputlines = txtOutputMaHoaFile.Lines;
                 string[] arrListStr = filenameinputMahoa.Split(new char[] { '_' });
                 string dungluong = "";
@@ -91,19 +93,26 @@ namespace Attack_ATMB
                 {
                     case "1mb":
                         filenameoutputMahoa = "Enc_1mb_11.txt";
+                        filenameoutputMahoaChallenge = "Challenge_1mb_MaNhom.txt";
                         break;
                     case "500kb":
                         filenameoutputMahoa = "Enc_500kb_11.txt";
+                        filenameoutputMahoaChallenge = "Challenge_500kb_MaNhom.txt";
                         break;
                     case "100kb":
                         filenameoutputMahoa = "Enc_100kb_11.txt";
+                        filenameoutputMahoaChallenge = "Challenge_100kb_MaNhom.txt";
                         break;
                     case "10kb":
                         filenameoutputMahoa = "Enc_10kb_11.txt";
+                        filenameoutputMahoaChallenge = "Challenge_10kb_MaNhom.txt";
                         break;
                 }
                 FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\"+ filenameoutputMahoa + "", outputlines);
                 txtOutputName.Text = System.IO.Path.GetFileName(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoa + "");
+                FileHelper.WriteFile(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoaChallenge + "", outputMahoaChallenge);
+                txtOutputChallengeName.Text = System.IO.Path.GetFileName(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoaChallenge + "");
+
             }
             else
             {
@@ -115,7 +124,6 @@ namespace Attack_ATMB
         {
             string dichChuyen_Input = inputMahoa;
             string dichChuyen_Z = "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'";
-            int dichChuyen_Key = 3;
             txtOutputMaHoaFile.Text = Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
 
         }
@@ -125,5 +133,9 @@ namespace Attack_ATMB
             System.Diagnostics.Process.Start(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\"+ filenameoutputMahoa + "");
         }
 
+        private void btnOpenFileChallenge_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\" + filenameoutputMahoaChallenge + "");
+        }
     }
 }
