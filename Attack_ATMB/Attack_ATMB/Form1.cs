@@ -15,6 +15,8 @@ namespace Attack_ATMB
         public Form1()
         {
             InitializeComponent();
+            Width = 1000;
+            Height = 500;
         }
 
         private void dịchChuyểnToolStripMenuItem_Click(object sender, EventArgs e)
