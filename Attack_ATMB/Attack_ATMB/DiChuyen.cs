@@ -87,7 +87,6 @@ namespace Attack_ATMB
                     if(i == 1)  dungluong = arrListStr[1]; 
                 }
 
-                string tenfileoutputMahoa = "";
                 switch (dungluong)
                 {
                     case "1mb":
