@@ -54,14 +54,15 @@
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.txtKeyMahoa = new System.Windows.Forms.TextBox();
             this.btnMaHoaFile = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtOutputGiaiMaChallengeName = new System.Windows.Forms.TextBox();
+            this.txtOutputGiaiMaName = new System.Windows.Forms.TextBox();
+            this.btnOpenFileDecryptChallenge = new System.Windows.Forms.Button();
+            this.btnOpenFileDecrypt = new System.Windows.Forms.Button();
+            this.txtOutputGiaiMaFile = new System.Windows.Forms.RichTextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtPathInputGiaiMa = new System.Windows.Forms.TextBox();
@@ -69,10 +70,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.txtKeyGiaiMa = new System.Windows.Forms.TextBox();
             this.btnGiaiMaFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtOuputMahoaChallenge = new System.Windows.Forms.RichTextBox();
-            this.txtKeyMahoa = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -306,7 +306,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.txtOuputMahoaChallenge);
             this.panel3.Controls.Add(this.txtPathInputMaHoa);
             this.panel3.Controls.Add(this.btnChonTep);
             this.panel3.Controls.Add(this.label5);
@@ -365,6 +364,14 @@
             this.panel8.Size = new System.Drawing.Size(145, 140);
             this.panel8.TabIndex = 2;
             // 
+            // txtKeyMahoa
+            // 
+            this.txtKeyMahoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKeyMahoa.Location = new System.Drawing.Point(21, 31);
+            this.txtKeyMahoa.Name = "txtKeyMahoa";
+            this.txtKeyMahoa.Size = new System.Drawing.Size(100, 20);
+            this.txtKeyMahoa.TabIndex = 3;
+            // 
             // btnMaHoaFile
             // 
             this.btnMaHoaFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -395,11 +402,11 @@
             // 
             // panel9
             // 
-            this.panel9.Controls.Add(this.textBox1);
-            this.panel9.Controls.Add(this.textBox2);
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Controls.Add(this.button2);
-            this.panel9.Controls.Add(this.richTextBox1);
+            this.panel9.Controls.Add(this.txtOutputGiaiMaChallengeName);
+            this.panel9.Controls.Add(this.txtOutputGiaiMaName);
+            this.panel9.Controls.Add(this.btnOpenFileDecryptChallenge);
+            this.panel9.Controls.Add(this.btnOpenFileDecrypt);
+            this.panel9.Controls.Add(this.txtOutputGiaiMaFile);
             this.panel9.Controls.Add(this.label6);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(456, 3);
@@ -407,47 +414,49 @@
             this.panel9.Size = new System.Drawing.Size(296, 136);
             this.panel9.TabIndex = 3;
             // 
-            // textBox1
+            // txtOutputGiaiMaChallengeName
             // 
-            this.textBox1.Location = new System.Drawing.Point(34, 92);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtOutputGiaiMaChallengeName.Location = new System.Drawing.Point(34, 92);
+            this.txtOutputGiaiMaChallengeName.Name = "txtOutputGiaiMaChallengeName";
+            this.txtOutputGiaiMaChallengeName.Size = new System.Drawing.Size(126, 20);
+            this.txtOutputGiaiMaChallengeName.TabIndex = 11;
             // 
-            // textBox2
+            // txtOutputGiaiMaName
             // 
-            this.textBox2.Location = new System.Drawing.Point(34, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtOutputGiaiMaName.Location = new System.Drawing.Point(34, 54);
+            this.txtOutputGiaiMaName.Name = "txtOutputGiaiMaName";
+            this.txtOutputGiaiMaName.Size = new System.Drawing.Size(126, 20);
+            this.txtOutputGiaiMaName.TabIndex = 10;
             // 
-            // button1
+            // btnOpenFileDecryptChallenge
             // 
-            this.button1.Location = new System.Drawing.Point(166, 92);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(121, 23);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Mở file(Challenge)";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOpenFileDecryptChallenge.Location = new System.Drawing.Point(166, 92);
+            this.btnOpenFileDecryptChallenge.Name = "btnOpenFileDecryptChallenge";
+            this.btnOpenFileDecryptChallenge.Size = new System.Drawing.Size(121, 23);
+            this.btnOpenFileDecryptChallenge.TabIndex = 9;
+            this.btnOpenFileDecryptChallenge.Text = "Mở file(Challenge)";
+            this.btnOpenFileDecryptChallenge.UseVisualStyleBackColor = true;
+            this.btnOpenFileDecryptChallenge.Click += new System.EventHandler(this.btnOpenFileDecryptChallenge_Click);
             // 
-            // button2
+            // btnOpenFileDecrypt
             // 
-            this.button2.Location = new System.Drawing.Point(166, 54);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(121, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "Mở file";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOpenFileDecrypt.Location = new System.Drawing.Point(166, 54);
+            this.btnOpenFileDecrypt.Name = "btnOpenFileDecrypt";
+            this.btnOpenFileDecrypt.Size = new System.Drawing.Size(121, 23);
+            this.btnOpenFileDecrypt.TabIndex = 8;
+            this.btnOpenFileDecrypt.Text = "Mở file";
+            this.btnOpenFileDecrypt.UseVisualStyleBackColor = true;
+            this.btnOpenFileDecrypt.Click += new System.EventHandler(this.btnOpenFileDecrypt_Click);
             // 
-            // richTextBox1
+            // txtOutputGiaiMaFile
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 24);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(296, 112);
-            this.richTextBox1.TabIndex = 4;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.Visible = false;
+            this.txtOutputGiaiMaFile.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtOutputGiaiMaFile.Location = new System.Drawing.Point(0, 24);
+            this.txtOutputGiaiMaFile.Name = "txtOutputGiaiMaFile";
+            this.txtOutputGiaiMaFile.Size = new System.Drawing.Size(296, 112);
+            this.txtOutputGiaiMaFile.TabIndex = 4;
+            this.txtOutputGiaiMaFile.Text = "";
+            this.txtOutputGiaiMaFile.Visible = false;
             // 
             // label6
             // 
@@ -487,6 +496,7 @@
             this.btnChonTepGiaiMa.TabIndex = 8;
             this.btnChonTepGiaiMa.Text = "Chọn tệp";
             this.btnChonTepGiaiMa.UseVisualStyleBackColor = true;
+            this.btnChonTepGiaiMa.Click += new System.EventHandler(this.btnChonTepGiaiMa_Click);
             // 
             // label7
             // 
@@ -511,6 +521,7 @@
             // 
             // panel12
             // 
+            this.panel12.Controls.Add(this.txtKeyGiaiMa);
             this.panel12.Controls.Add(this.btnGiaiMaFile);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(305, 3);
@@ -518,10 +529,18 @@
             this.panel12.Size = new System.Drawing.Size(145, 136);
             this.panel12.TabIndex = 2;
             // 
+            // txtKeyGiaiMa
+            // 
+            this.txtKeyGiaiMa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtKeyGiaiMa.Location = new System.Drawing.Point(14, 40);
+            this.txtKeyGiaiMa.Name = "txtKeyGiaiMa";
+            this.txtKeyGiaiMa.Size = new System.Drawing.Size(118, 20);
+            this.txtKeyGiaiMa.TabIndex = 3;
+            // 
             // btnGiaiMaFile
             // 
             this.btnGiaiMaFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGiaiMaFile.Location = new System.Drawing.Point(16, 61);
+            this.btnGiaiMaFile.Location = new System.Drawing.Point(14, 69);
             this.btnGiaiMaFile.Name = "btnGiaiMaFile";
             this.btnGiaiMaFile.Size = new System.Drawing.Size(118, 23);
             this.btnGiaiMaFile.TabIndex = 2;
@@ -531,24 +550,13 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // txtOuputMahoaChallenge
-            // 
-            this.txtOuputMahoaChallenge.Location = new System.Drawing.Point(52, 117);
-            this.txtOuputMahoaChallenge.Name = "txtOuputMahoaChallenge";
-            this.txtOuputMahoaChallenge.Size = new System.Drawing.Size(8, 8);
-            this.txtOuputMahoaChallenge.TabIndex = 8;
-            this.txtOuputMahoaChallenge.Text = "";
-            this.txtOuputMahoaChallenge.Visible = false;
-            // 
-            // txtKeyMahoa
-            // 
-            this.txtKeyMahoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKeyMahoa.Location = new System.Drawing.Point(21, 31);
-            this.txtKeyMahoa.Name = "txtKeyMahoa";
-            this.txtKeyMahoa.Size = new System.Drawing.Size(100, 20);
-            this.txtKeyMahoa.TabIndex = 3;
+            this.openFileDialog1.Filter = "txt files (*.txt)|*.txt";
+            this.openFileDialog1.FilterIndex = 2;
+            this.openFileDialog1.InitialDirectory = "C:\\Attack_DiChuyen_HoanVi\\Attack_ATMB\\Attack_ATMB";
+            this.openFileDialog1.ReadOnlyChecked = true;
+            this.openFileDialog1.RestoreDirectory = true;
+            this.openFileDialog1.ShowReadOnly = true;
+            this.openFileDialog1.Title = "Browse Text Files";
             // 
             // DiChuyen
             // 
@@ -579,6 +587,7 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -623,12 +632,12 @@
         private System.Windows.Forms.TextBox txtOutputName;
         private System.Windows.Forms.Button btnOpenFileChallenge;
         private System.Windows.Forms.Button btnOpenFileEncrypt;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox txtOuputMahoaChallenge;
+        private System.Windows.Forms.TextBox txtOutputGiaiMaChallengeName;
+        private System.Windows.Forms.TextBox txtOutputGiaiMaName;
+        private System.Windows.Forms.Button btnOpenFileDecryptChallenge;
+        private System.Windows.Forms.Button btnOpenFileDecrypt;
+        private System.Windows.Forms.RichTextBox txtOutputGiaiMaFile;
         private System.Windows.Forms.TextBox txtKeyMahoa;
+        private System.Windows.Forms.TextBox txtKeyGiaiMa;
     }
 }

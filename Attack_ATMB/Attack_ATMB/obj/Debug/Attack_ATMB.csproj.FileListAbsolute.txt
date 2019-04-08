@@ -1,0 +1,13 @@
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csprojAssemblyReference.cache
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.About.resources
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.DiChuyen.resources
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.Form1.resources
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.HoanVi.resources
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.Properties.Resources.resources
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.GenerateResource.cache
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.csproj.CoreCompileInputs.cache
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.exe
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\obj\Debug\Attack_ATMB.pdb
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\Attack_ATMB.exe.config
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\Attack_ATMB.exe
+C:\Attack_DiChuyen_HoanVi\Attack_ATMB\Attack_ATMB\Attack_ATMB.pdb
