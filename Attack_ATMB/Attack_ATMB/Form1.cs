@@ -51,7 +51,7 @@ namespace Attack_ATMB
 
         private void huấnLuyệnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HuanLuyen hoanviMDIChild = new HuanLuyen();
+            frmHuanLuyen hoanviMDIChild = new frmHuanLuyen();
             hoanviMDIChild.MdiParent = this;
             hoanviMDIChild.Show();
             hoanviMDIChild.WindowState = FormWindowState.Minimized;
