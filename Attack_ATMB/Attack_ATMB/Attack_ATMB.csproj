@@ -94,6 +94,7 @@
     <Compile Include="MyLibrary\Ceasar.cs" />
     <Compile Include="MyLibrary\FileHelper.cs" />
     <Compile Include="MyLibrary\TranspositionCipher.cs" />
+    <Compile Include="MyLibrary\WinformHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TanCong.cs">

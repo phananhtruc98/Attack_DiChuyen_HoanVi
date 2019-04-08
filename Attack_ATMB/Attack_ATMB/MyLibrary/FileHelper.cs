@@ -15,6 +15,18 @@ namespace Attack_ATMB.MyLibrary
             return File.ReadAllText(path);
         }
 
+        public static Tuple<string, string, string, string> ReadFileEnc(string path)
+        {
+            var stringFromFile = FileHelper.ReadFile(path)
+                .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            return Tuple.Create(stringFromFile[0], stringFromFile[1], stringFromFile[2], string.Join(Environment.NewLine, stringFromFile.Skip(3)));
+        }
+        public static Tuple<string, string, string> ReadFileChallenge(string path)
+        {
+            var stringFromFile = FileHelper.ReadFile(path)
+                .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
+            return Tuple.Create(stringFromFile[0], stringFromFile[1], string.Join(Environment.NewLine, stringFromFile.Skip(3)));
+        }
         public static void WriteFile(string path, string encryptName, string z, string k, string s)
         {
             File.WriteAllText(path, encryptName + Environment.NewLine + z + Environment.NewLine + k + Environment.NewLine + s);
