@@ -45,7 +45,7 @@
             this.clbTypeOutput = new System.Windows.Forms.CheckedListBox();
             this.btnFileExecute = new System.Windows.Forms.Button();
             this.rdbNhapChallenge = new System.Windows.Forms.RadioButton();
-            this.rdbNhap = new System.Windows.Forms.RadioButton();
+            this.rdbEnc = new System.Windows.Forms.RadioButton();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.rdbInput = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
@@ -158,7 +158,6 @@
             this.txtK.Name = "txtK";
             this.txtK.Size = new System.Drawing.Size(209, 29);
             this.txtK.TabIndex = 4;
-            this.txtK.Text = "me";
             // 
             // txtZ
             // 
@@ -167,7 +166,6 @@
             this.txtZ.Name = "txtZ";
             this.txtZ.Size = new System.Drawing.Size(209, 29);
             this.txtZ.TabIndex = 5;
-            this.txtZ.Text = "em";
             // 
             // txtBefore
             // 
@@ -211,7 +209,7 @@
             this.tableLayoutPanel3.Controls.Add(this.clbTypeOutput, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.btnFileExecute, 0, 3);
             this.tableLayoutPanel3.Controls.Add(this.rdbNhapChallenge, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdbNhap, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.rdbEnc, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.rdbInput, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(438, 196);
@@ -268,16 +266,16 @@
             this.rdbNhapChallenge.Text = "Nhập file challenge";
             this.rdbNhapChallenge.UseVisualStyleBackColor = true;
             // 
-            // rdbNhap
+            // rdbEnc
             // 
-            this.rdbNhap.AutoSize = true;
-            this.rdbNhap.Location = new System.Drawing.Point(3, 38);
-            this.rdbNhap.Name = "rdbNhap";
-            this.rdbNhap.Size = new System.Drawing.Size(203, 29);
-            this.rdbNhap.TabIndex = 0;
-            this.rdbNhap.Text = "Nhập file bị mã hóa";
-            this.rdbNhap.UseVisualStyleBackColor = true;
-            this.rdbNhap.CheckedChanged += new System.EventHandler(this.rdbNhap_CheckedChanged);
+            this.rdbEnc.AutoSize = true;
+            this.rdbEnc.Location = new System.Drawing.Point(3, 38);
+            this.rdbEnc.Name = "rdbEnc";
+            this.rdbEnc.Size = new System.Drawing.Size(203, 29);
+            this.rdbEnc.TabIndex = 0;
+            this.rdbEnc.Text = "Nhập file bị mã hóa";
+            this.rdbEnc.UseVisualStyleBackColor = true;
+            this.rdbEnc.CheckedChanged += new System.EventHandler(this.rdbNhap_CheckedChanged);
             // 
             // openFileDialog1
             // 
@@ -348,7 +346,7 @@
         private System.Windows.Forms.TextBox txtK;
         private System.Windows.Forms.TextBox txtZ;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.RadioButton rdbNhap;
+        private System.Windows.Forms.RadioButton rdbEnc;
         private System.Windows.Forms.RadioButton rdbXuat;
         private System.Windows.Forms.CheckedListBox clbTypeOutput;
         private System.Windows.Forms.Button btnFileExecute;

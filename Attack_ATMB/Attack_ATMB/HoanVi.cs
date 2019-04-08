@@ -52,18 +52,20 @@ namespace Attack_ATMB
                 {
                     txtBefore.Text = FileHelper.ReadFile(openFileDialog1.FileName);
                 }
-                if (rdbNhap.Checked)
+                if (rdbEnc.Checked)
                 {
-                    var stringFromFile = FileHelper.ReadFile(openFileDialog1.FileName)
-                        .Split(new[] {Environment.NewLine}, StringSplitOptions.None);
-                    txtZ.Text = stringFromFile[1];
-                    txtK.Text = stringFromFile[2];
-                    txtBefore.Text = string.Join(Environment.NewLine, stringFromFile.Skip(3));
+                    Tuple<string, string, string, string> readFile = FileHelper.ReadFileEnc(openFileDialog1.FileName);
+                    txtZ.Text = readFile.Item2;
+                    txtK.Text = readFile.Item3;
+                    txtBefore.Text = readFile.Item4;
                 }
 
                 if (rdbNhapChallenge.Checked)
                 {
-                    _maNhomChallenge = openFileDialog1.SafeFileName.Split('_')[2];
+                    Tuple<string, string, string> readFile = FileHelper.ReadFileChallenge(openFileDialog1.FileName);
+                    txtZ.Text = readFile.Item2;
+                    txtBefore.Text = readFile.Item3;
+
                 }
 
             }
@@ -131,22 +133,9 @@ namespace Attack_ATMB
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-           ClearTextBoxes(this.Controls);
+           WinformHelper.ClearTextBoxes(this.Controls);
 
         }
-        public void ClearTextBoxes(Control.ControlCollection ctrlCollection)
-        {
-            foreach (Control ctrl in ctrlCollection)
-            {
-                if (ctrl is TextBoxBase)
-                {
-                    ctrl.Text = String.Empty;
-                }
-                else
-                {
-                    ClearTextBoxes(ctrl.Controls);
-                }
-            }
-        }
+       
     }
 }
