@@ -342,3 +342,6 @@ healthchecksdb
 
 # Backup folder for Package Reference Convert tool in Visual Studio 2017
 MigrationBackup/
+/Attack_ATMB/.vs
+/Attack_ATMB/Attack_ATMB/bin
+/Attack_ATMB/Attack_ATMB/obj

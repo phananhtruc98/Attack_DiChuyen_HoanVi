@@ -60,12 +60,14 @@ namespace Attack_ATMB
                     txtBefore.Text = readFile.Item4;
                 }
 
-                if (rdbNhapChallenge.Checked)
+                if (rdbChallenge.Checked)
                 {
                     Tuple<string, string, string> readFile = FileHelper.ReadFileChallenge(openFileDialog1.FileName);
                     txtZ.Text = readFile.Item2;
                     txtBefore.Text = readFile.Item3;
-
+                    permute(txtZ.Text, 0, txtZ.Text.Length - 1);
+                    txtChallengeK.Text = listPermute[current];
+                    GetChallengeResult();
                 }
 
             }
@@ -73,6 +75,7 @@ namespace Attack_ATMB
 
         }
 
+        private static int current = 0;
         private void btnExecute_Click(object sender, EventArgs e)
         {
             if (rdbMaHoa.Checked) txtAfter.Text = MyLibrary.TranspositionCipher.Encipher(txtBefore.Text, txtK.Text, txtZ.Text);
@@ -86,37 +89,33 @@ namespace Attack_ATMB
             {
                 if (rdbMaHoa.Checked)
                 {
-                    if (clbTypeOutput.GetItemCheckState(0) == CheckState.Checked)
-                    {
-                        FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outEncrypt, _size, _maNhom)}", "Hoán vị", txtZ.Text,
-                            txtK.Text, txtAfter.Text);
-                        MessageBox.Show(String.Format(message, String.Format(_outEncrypt, _size, _maNhom)));
-                    }
 
-                    if (clbTypeOutput.GetItemCheckState(1) == CheckState.Checked)
-                    {
-                        FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outEncryptChallenge, _size, _maNhom)}", "Hoán vị",
-                            txtZ.Text, txtAfter.Text);
-                        MessageBox.Show(String.Format(message, String.Format(_outEncryptChallenge, _size, _maNhom)));
-                    }
+                    FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outEncrypt, _size, _maNhom)}", "Hoán vị", txtZ.Text,
+                        txtK.Text, txtAfter.Text);
+                    MessageBox.Show(String.Format(message, String.Format(_outEncrypt, _size, _maNhom)));
+                    FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outEncryptChallenge, _size, _maNhom)}", "Hoán vị",
+                        txtZ.Text, txtAfter.Text);
+                    MessageBox.Show(String.Format(message, String.Format(_outEncryptChallenge, _size, _maNhom)));
+
                 }
-                else
+
+                //if (clbTypeOutput.GetItemCheckState(0) == CheckState.Checked)
+                if (rdbEnc.Checked)
                 {
-                    if (clbTypeOutput.GetItemCheckState(0) == CheckState.Checked)
-                    {
-                        FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outDecrypt, _size, _maNhom)}", "Hoán vị", txtZ.Text,
-                            txtK.Text, txtAfter.Text);
-                        MessageBox.Show(String.Format(message, String.Format(_outDecrypt, _size, _maNhom)));
-                    }
-
-                    if (clbTypeOutput.GetItemCheckState(1) == CheckState.Checked)
-                    {
-                        FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outDecryptChallenge, _size, _maNhomChallenge, _maNhom)}", "Hoán vị",
-                            txtZ.Text, txtAfter.Text);
-                        MessageBox.Show(String.Format(message, String.Format(_outDecryptChallenge, _size, _maNhomChallenge, _maNhom)));
-                    }
-
+                    FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outDecrypt, _size, _maNhom)}", "Hoán vị", txtZ.Text,
+                        txtK.Text, txtAfter.Text);
+                    MessageBox.Show(String.Format(message, String.Format(_outDecrypt, _size, _maNhom)));
                 }
+
+                //if (clbTypeOutput.GetItemCheckState(1) == CheckState.Checked)
+                if (rdbChallenge.Checked)
+                {
+                    FileHelper.WriteFile(Application.StartupPath + $@"\{String.Format(_outDecryptChallenge, _size, _maNhomChallenge, _maNhom)}", "Hoán vị",
+                        txtZ.Text, txtAfter.Text);
+                    MessageBox.Show(String.Format(message, String.Format(_outDecryptChallenge, _size, _maNhomChallenge, _maNhom)));
+                }
+
+
 
             }
             catch (Exception ex)
@@ -128,14 +127,76 @@ namespace Attack_ATMB
 
         private void rdbNhap_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
-           WinformHelper.ClearTextBoxes(this.Controls);
+            WinformHelper.ClearTextBoxes(this.Controls);
 
         }
-       
+
+        private static List<string> listPermute = new List<string>();
+        private static void permute(String str, int l, int r)
+        {
+            if (l == r)
+                listPermute.Add(str);
+            else
+            {
+                for (int i = l; i <= r; i++)
+                {
+                    str = swap(str, l, i);
+                    permute(str, l + 1, r);
+                    str = swap(str, l, i);
+                }
+            }
+        }
+
+        public static String swap(String a,
+            int i, int j)
+        {
+            char temp;
+            char[] charArray = a.ToCharArray();
+            temp = charArray[i];
+            charArray[i] = charArray[j];
+            charArray[j] = temp;
+            string s = new string(charArray);
+            return s;
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            current--;
+            if (current < 0) current = listPermute.Count - 1;
+            GetChallengeResult();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            current++;
+            if (current > listPermute.Count - 1) current = 0;
+            GetChallengeResult();
+        }
+
+        private void GetChallengeResult()
+        {
+            txtChallengeK.Text = listPermute[current];
+            txtChallenge.Text = MyLibrary.TranspositionCipher.Decipher(txtBefore.Text, txtZ.Text, listPermute[current]);
+        }
+        private void GetChallengeResultK()
+        {
+
+            txtChallenge.Text = MyLibrary.TranspositionCipher.Decipher(txtBefore.Text, txtZ.Text, txtChallengeK.Text);
+        }
+        private void btnRandom_Click(object sender, EventArgs e)
+        {
+            current = new Random().Next(listPermute.Count);
+            GetChallengeResult();
+        }
+
+        private void btnChallengeKSelect_Click(object sender, EventArgs e)
+        {
+            GetChallengeResultK();
+        }
     }
 }

@@ -25,7 +25,7 @@ namespace Attack_ATMB.MyLibrary
         {
             var stringFromFile = FileHelper.ReadFile(path)
                 .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-            return Tuple.Create(stringFromFile[0], stringFromFile[1], string.Join(Environment.NewLine, stringFromFile.Skip(3)));
+            return Tuple.Create(stringFromFile[0], stringFromFile[1], string.Join(Environment.NewLine, stringFromFile.Skip(2)));
         }
         public static void WriteFile(string path, string encryptName, string z, string k, string s)
         {

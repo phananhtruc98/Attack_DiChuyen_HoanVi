@@ -40,18 +40,27 @@
             this.txtBefore = new System.Windows.Forms.TextBox();
             this.txtAfter = new System.Windows.Forms.TextBox();
             this.btnPickFile = new System.Windows.Forms.Button();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.rdbXuat = new System.Windows.Forms.RadioButton();
-            this.clbTypeOutput = new System.Windows.Forms.CheckedListBox();
-            this.btnFileExecute = new System.Windows.Forms.Button();
-            this.rdbNhapChallenge = new System.Windows.Forms.RadioButton();
-            this.rdbEnc = new System.Windows.Forms.RadioButton();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.rdbInput = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.clbTypeOutput = new System.Windows.Forms.CheckedListBox();
+            this.rdbInput = new System.Windows.Forms.RadioButton();
+            this.rdbEnc = new System.Windows.Forms.RadioButton();
+            this.rdbChallenge = new System.Windows.Forms.RadioButton();
+            this.btnFileExecute = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtChallenge = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
+            this.txtChallengeK = new System.Windows.Forms.TextBox();
+            this.btnRandom = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnChallengeKSelect = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -66,6 +75,8 @@
             this.tableLayoutPanel1.Controls.Add(this.btnPickFile, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.btnClear, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtChallenge, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -200,82 +211,16 @@
             this.btnPickFile.UseVisualStyleBackColor = true;
             this.btnPickFile.Click += new System.EventHandler(this.btnPickFile_Click);
             // 
-            // tableLayoutPanel3
+            // btnClear
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.rdbXuat, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.clbTypeOutput, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.btnFileExecute, 0, 3);
-            this.tableLayoutPanel3.Controls.Add(this.rdbNhapChallenge, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdbEnc, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rdbInput, 0, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(438, 196);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(429, 187);
-            this.tableLayoutPanel3.TabIndex = 9;
-            // 
-            // rdbXuat
-            // 
-            this.rdbXuat.AutoSize = true;
-            this.rdbXuat.Location = new System.Drawing.Point(217, 3);
-            this.rdbXuat.Name = "rdbXuat";
-            this.rdbXuat.Size = new System.Drawing.Size(107, 29);
-            this.rdbXuat.TabIndex = 1;
-            this.rdbXuat.Text = "Xuất file";
-            this.rdbXuat.UseVisualStyleBackColor = true;
-            // 
-            // clbTypeOutput
-            // 
-            this.clbTypeOutput.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.clbTypeOutput.FormattingEnabled = true;
-            this.clbTypeOutput.Items.AddRange(new object[] {
-            "Ouput",
-            "Challenge"});
-            this.clbTypeOutput.Location = new System.Drawing.Point(217, 73);
-            this.clbTypeOutput.Name = "clbTypeOutput";
-            this.clbTypeOutput.Size = new System.Drawing.Size(209, 60);
-            this.clbTypeOutput.TabIndex = 2;
-            // 
-            // btnFileExecute
-            // 
-            this.tableLayoutPanel3.SetColumnSpan(this.btnFileExecute, 2);
-            this.btnFileExecute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFileExecute.Location = new System.Drawing.Point(3, 139);
-            this.btnFileExecute.Name = "btnFileExecute";
-            this.btnFileExecute.Size = new System.Drawing.Size(423, 45);
-            this.btnFileExecute.TabIndex = 3;
-            this.btnFileExecute.Text = "Thực thi";
-            this.btnFileExecute.UseVisualStyleBackColor = true;
-            this.btnFileExecute.Click += new System.EventHandler(this.btnFileExecute_Click);
-            // 
-            // rdbNhapChallenge
-            // 
-            this.rdbNhapChallenge.AutoSize = true;
-            this.rdbNhapChallenge.Location = new System.Drawing.Point(3, 73);
-            this.rdbNhapChallenge.Name = "rdbNhapChallenge";
-            this.rdbNhapChallenge.Size = new System.Drawing.Size(202, 29);
-            this.rdbNhapChallenge.TabIndex = 4;
-            this.rdbNhapChallenge.Text = "Nhập file challenge";
-            this.rdbNhapChallenge.UseVisualStyleBackColor = true;
-            // 
-            // rdbEnc
-            // 
-            this.rdbEnc.AutoSize = true;
-            this.rdbEnc.Location = new System.Drawing.Point(3, 38);
-            this.rdbEnc.Name = "rdbEnc";
-            this.rdbEnc.Size = new System.Drawing.Size(203, 29);
-            this.rdbEnc.TabIndex = 0;
-            this.rdbEnc.Text = "Nhập file bị mã hóa";
-            this.rdbEnc.UseVisualStyleBackColor = true;
-            this.rdbEnc.CheckedChanged += new System.EventHandler(this.rdbNhap_CheckedChanged);
+            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnClear.Location = new System.Drawing.Point(873, 196);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(431, 187);
+            this.btnClear.TabIndex = 10;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // openFileDialog1
             // 
@@ -289,6 +234,17 @@
             this.openFileDialog1.ShowReadOnly = true;
             this.openFileDialog1.Title = "Tìm kiếm tập tin";
             // 
+            // clbTypeOutput
+            // 
+            this.clbTypeOutput.FormattingEnabled = true;
+            this.clbTypeOutput.Items.AddRange(new object[] {
+            "Ouput",
+            "Challenge"});
+            this.clbTypeOutput.Location = new System.Drawing.Point(217, 3);
+            this.clbTypeOutput.Name = "clbTypeOutput";
+            this.clbTypeOutput.Size = new System.Drawing.Size(209, 76);
+            this.clbTypeOutput.TabIndex = 2;
+            // 
             // rdbInput
             // 
             this.rdbInput.AutoSize = true;
@@ -301,16 +257,150 @@
             this.rdbInput.Text = "Nhập file input";
             this.rdbInput.UseVisualStyleBackColor = true;
             // 
-            // btnClear
+            // rdbEnc
             // 
-            this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnClear.Location = new System.Drawing.Point(873, 196);
-            this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(431, 187);
-            this.btnClear.TabIndex = 10;
-            this.btnClear.Text = "Clear";
-            this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            this.rdbEnc.AutoSize = true;
+            this.rdbEnc.Location = new System.Drawing.Point(3, 85);
+            this.rdbEnc.Name = "rdbEnc";
+            this.rdbEnc.Size = new System.Drawing.Size(203, 29);
+            this.rdbEnc.TabIndex = 0;
+            this.rdbEnc.Text = "Nhập file bị mã hóa";
+            this.rdbEnc.UseVisualStyleBackColor = true;
+            this.rdbEnc.CheckedChanged += new System.EventHandler(this.rdbNhap_CheckedChanged);
+            // 
+            // rdbChallenge
+            // 
+            this.rdbChallenge.AutoSize = true;
+            this.rdbChallenge.Location = new System.Drawing.Point(3, 120);
+            this.rdbChallenge.Name = "rdbChallenge";
+            this.rdbChallenge.Size = new System.Drawing.Size(202, 29);
+            this.rdbChallenge.TabIndex = 4;
+            this.rdbChallenge.Text = "Nhập file challenge";
+            this.rdbChallenge.UseVisualStyleBackColor = true;
+            // 
+            // btnFileExecute
+            // 
+            this.tableLayoutPanel3.SetColumnSpan(this.btnFileExecute, 2);
+            this.btnFileExecute.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFileExecute.Location = new System.Drawing.Point(3, 155);
+            this.btnFileExecute.Name = "btnFileExecute";
+            this.btnFileExecute.Size = new System.Drawing.Size(423, 29);
+            this.btnFileExecute.TabIndex = 3;
+            this.btnFileExecute.Text = "Xuất file";
+            this.btnFileExecute.UseVisualStyleBackColor = true;
+            this.btnFileExecute.Click += new System.EventHandler(this.btnFileExecute_Click);
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.btnFileExecute, 0, 3);
+            this.tableLayoutPanel3.Controls.Add(this.rdbChallenge, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.rdbEnc, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.rdbInput, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.clbTypeOutput, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(438, 196);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(429, 187);
+            this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // txtChallenge
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.txtChallenge, 2);
+            this.txtChallenge.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtChallenge.Location = new System.Drawing.Point(438, 389);
+            this.txtChallenge.Multiline = true;
+            this.txtChallenge.Name = "txtChallenge";
+            this.txtChallenge.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtChallenge.Size = new System.Drawing.Size(866, 187);
+            this.txtChallenge.TabIndex = 11;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.Controls.Add(this.btnPrevious, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnNext, 2, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btnRandom, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.flowLayoutPanel1, 1, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 389);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(429, 187);
+            this.tableLayoutPanel4.TabIndex = 12;
+            // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnPrevious.Location = new System.Drawing.Point(3, 3);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(136, 87);
+            this.btnPrevious.TabIndex = 0;
+            this.btnPrevious.Text = "Trước";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNext.Location = new System.Drawing.Point(287, 3);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(139, 87);
+            this.btnNext.TabIndex = 1;
+            this.btnNext.Text = "Sau";
+            this.btnNext.UseVisualStyleBackColor = true;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
+            // txtChallengeK
+            // 
+            this.txtChallengeK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtChallengeK.Location = new System.Drawing.Point(3, 3);
+            this.txtChallengeK.Name = "txtChallengeK";
+            this.txtChallengeK.Size = new System.Drawing.Size(133, 29);
+            this.txtChallengeK.TabIndex = 2;
+            // 
+            // btnRandom
+            // 
+            this.btnRandom.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnRandom.Location = new System.Drawing.Point(145, 96);
+            this.btnRandom.Name = "btnRandom";
+            this.btnRandom.Size = new System.Drawing.Size(136, 88);
+            this.btnRandom.TabIndex = 3;
+            this.btnRandom.Text = "Random";
+            this.btnRandom.UseVisualStyleBackColor = true;
+            this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.txtChallengeK);
+            this.flowLayoutPanel1.Controls.Add(this.btnChallengeKSelect);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(145, 3);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(136, 87);
+            this.flowLayoutPanel1.TabIndex = 4;
+            // 
+            // btnChallengeKSelect
+            // 
+            this.btnChallengeKSelect.Location = new System.Drawing.Point(3, 38);
+            this.btnChallengeKSelect.Name = "btnChallengeKSelect";
+            this.btnChallengeKSelect.Size = new System.Drawing.Size(133, 49);
+            this.btnChallengeKSelect.TabIndex = 3;
+            this.btnChallengeKSelect.Text = "Chọn";
+            this.btnChallengeKSelect.UseVisualStyleBackColor = true;
+            this.btnChallengeKSelect.Click += new System.EventHandler(this.btnChallengeKSelect_Click);
             // 
             // HoanVi
             // 
@@ -326,6 +416,9 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -345,13 +438,20 @@
         private System.Windows.Forms.Label lbZ;
         private System.Windows.Forms.TextBox txtK;
         private System.Windows.Forms.TextBox txtZ;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.RadioButton rdbEnc;
-        private System.Windows.Forms.RadioButton rdbXuat;
-        private System.Windows.Forms.CheckedListBox clbTypeOutput;
-        private System.Windows.Forms.Button btnFileExecute;
-        private System.Windows.Forms.RadioButton rdbNhapChallenge;
-        private System.Windows.Forms.RadioButton rdbInput;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.Button btnFileExecute;
+        private System.Windows.Forms.RadioButton rdbChallenge;
+        private System.Windows.Forms.RadioButton rdbEnc;
+        private System.Windows.Forms.RadioButton rdbInput;
+        private System.Windows.Forms.CheckedListBox clbTypeOutput;
+        private System.Windows.Forms.TextBox txtChallenge;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button btnPrevious;
+        private System.Windows.Forms.Button btnNext;
+        private System.Windows.Forms.TextBox txtChallengeK;
+        private System.Windows.Forms.Button btnRandom;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btnChallengeKSelect;
     }
 }
