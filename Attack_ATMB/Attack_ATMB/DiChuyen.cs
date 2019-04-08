@@ -14,8 +14,8 @@ namespace Attack_ATMB
     public partial class DiChuyen : Form
     {
         int dichChuyen_Key = 0;
-        string dichChuyen_Z = "'aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\'";
-        string s;
+        string dichChuyen_Z = "aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\\";
+        string string_Z_giaima;
         string inputMahoa;
         string inputGiaima;
         string filenameinputMahoa;
@@ -65,7 +65,7 @@ namespace Attack_ATMB
         {
             if (txtPathInputMaHoa.Text != "")
             {
-               
+
                 if (txtKeyMahoa.Text != "")
                 {
                     dichChuyen_Key = int.Parse(txtKeyMahoa.Text);
@@ -76,7 +76,7 @@ namespace Attack_ATMB
                     outputMahoa = Ceasar.Encipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
                     FileHelper.WriteFile(@"" + filenameoutputMahoa + "", "Di chuyển", dichChuyen_Z, dichChuyen_Key.ToString(), outputMahoa);
                     txtOutputName.Text = System.IO.Path.GetFileName(@"" + filenameoutputMahoa + "");
-                    FileHelper.WriteFile(@"" + filenameoutputMahoaChallenge + "","Di chuyển", dichChuyen_Z, outputMahoa);
+                    FileHelper.WriteFile(@"" + filenameoutputMahoaChallenge + "", "Di chuyển", dichChuyen_Z, outputMahoa);
                     txtOutputChallengeName.Text = System.IO.Path.GetFileName(@"" + filenameoutputMahoaChallenge + "");
                 }
                 else
@@ -90,7 +90,7 @@ namespace Attack_ATMB
             }
         }
 
-        
+
 
         private void btnOpenFileEncrypt_Click(object sender, EventArgs e)
         {
@@ -114,16 +114,18 @@ namespace Attack_ATMB
                 MessageBox.Show("Chưa chọn tệp!!");
                 return;
             }
-            inputGiaima = FileHelper.ReadFile(@"" + txtPathInputGiaiMa.Text + "");
-            var stringFromFile = FileHelper.ReadFile(openFileDialog1.FileName)
-                        .Split(new[] { Environment.NewLine }, StringSplitOptions.None);
-            if(filenameinputGiaima.Contains("Enc"))
+            if (txtPathInputGiaiMa.Text.Contains("Enc"))
             {
-
-                txtKeyGiaiMa.Text = stringFromFile[2];
-                dichChuyen_Z = stringFromFile[1];
-                inputGiaima = string.Join(Environment.NewLine, stringFromFile.Skip(3));
-
+                Tuple<string, string, string, string> readFile = FileHelper.ReadFileEnc(@"" + txtPathInputGiaiMa.Text + "");
+                string_Z_giaima = readFile.Item2;
+                txtKeyGiaiMa.Text = readFile.Item3;
+                inputGiaima = readFile.Item4;
+            }
+            if(txtPathInputGiaiMa.Text.Contains("Challenge"))
+            {
+                Tuple<string, string, string> readFileChallenge = FileHelper.ReadFileChallenge(openFileDialog1.FileName);
+                string_Z_giaima = readFileChallenge.Item2;
+                inputGiaima = readFileChallenge.Item3;
             }
             
         }
@@ -140,11 +142,11 @@ namespace Attack_ATMB
                     string dungluong = filenameinputGiaima.Split(new char[] { '_' })[1];
                     filenameoutputGiaima = "Decrypt_" + dungluong + "_11.txt";
                     filenameoutputGiaimaChallenge = "Decrypt_Challenge" + dungluong + "_11.txt";
-                    OutputText.Text = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
-                    outputGiaima = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
-                    FileHelper.WriteFile(@"" + filenameoutputGiaima + "", "Di chuyển", dichChuyen_Z, dichChuyen_Key.ToString(), outputGiaima);
+                    OutputText.Text = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, string_Z_giaima);
+                    outputGiaima = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, string_Z_giaima);
+                    FileHelper.WriteFile(@"" + filenameoutputGiaima + "", "Di chuyển", string_Z_giaima, dichChuyen_Key.ToString(), outputGiaima);
                     txtOutputGiaiMaName.Text = System.IO.Path.GetFileName(@"" + filenameoutputGiaima + "");
-                    FileHelper.WriteFile(@"" + filenameoutputGiaimaChallenge + "", "Di chuyển", dichChuyen_Z, outputGiaima);
+                    FileHelper.WriteFile(@"" + filenameoutputGiaimaChallenge + "", "Di chuyển", string_Z_giaima, outputGiaima);
                     txtOutputGiaiMaChallengeName.Text = System.IO.Path.GetFileName(@"" + filenameoutputGiaimaChallenge + "");
                 }
                 else
