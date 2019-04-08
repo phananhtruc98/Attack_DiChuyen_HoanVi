@@ -70,9 +70,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.txtKeyGiaiMa = new System.Windows.Forms.TextBox();
             this.btnGiaiMaFile = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.mnrKeyGiaiMa = new System.Windows.Forms.NumericUpDown();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -85,6 +85,7 @@
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mnrKeyGiaiMa)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -367,10 +368,11 @@
             // txtKeyMahoa
             // 
             this.txtKeyMahoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKeyMahoa.Location = new System.Drawing.Point(21, 31);
+            this.txtKeyMahoa.Location = new System.Drawing.Point(16, 31);
             this.txtKeyMahoa.Name = "txtKeyMahoa";
-            this.txtKeyMahoa.Size = new System.Drawing.Size(100, 20);
+            this.txtKeyMahoa.Size = new System.Drawing.Size(116, 20);
             this.txtKeyMahoa.TabIndex = 3;
+            this.txtKeyMahoa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKeyMahoa_KeyPress);
             // 
             // btnMaHoaFile
             // 
@@ -521,21 +523,13 @@
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.txtKeyGiaiMa);
+            this.panel12.Controls.Add(this.mnrKeyGiaiMa);
             this.panel12.Controls.Add(this.btnGiaiMaFile);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel12.Location = new System.Drawing.Point(305, 3);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(145, 136);
             this.panel12.TabIndex = 2;
-            // 
-            // txtKeyGiaiMa
-            // 
-            this.txtKeyGiaiMa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtKeyGiaiMa.Location = new System.Drawing.Point(14, 40);
-            this.txtKeyGiaiMa.Name = "txtKeyGiaiMa";
-            this.txtKeyGiaiMa.Size = new System.Drawing.Size(118, 20);
-            this.txtKeyGiaiMa.TabIndex = 3;
             // 
             // btnGiaiMaFile
             // 
@@ -557,6 +551,14 @@
             this.openFileDialog1.RestoreDirectory = true;
             this.openFileDialog1.ShowReadOnly = true;
             this.openFileDialog1.Title = "Browse Text Files";
+            // 
+            // mnrKeyGiaiMa
+            // 
+            this.mnrKeyGiaiMa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.mnrKeyGiaiMa.Location = new System.Drawing.Point(16, 40);
+            this.mnrKeyGiaiMa.Name = "mnrKeyGiaiMa";
+            this.mnrKeyGiaiMa.Size = new System.Drawing.Size(116, 20);
+            this.mnrKeyGiaiMa.TabIndex = 4;
             // 
             // DiChuyen
             // 
@@ -587,7 +589,7 @@
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
             this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mnrKeyGiaiMa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -638,6 +640,6 @@
         private System.Windows.Forms.Button btnOpenFileDecrypt;
         private System.Windows.Forms.RichTextBox txtOutputGiaiMaFile;
         private System.Windows.Forms.TextBox txtKeyMahoa;
-        private System.Windows.Forms.TextBox txtKeyGiaiMa;
+        private System.Windows.Forms.NumericUpDown mnrKeyGiaiMa;
     }
 }
