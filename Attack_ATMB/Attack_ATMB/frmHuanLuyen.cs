@@ -23,7 +23,7 @@ namespace Attack_ATMB
 
         }
 
-        
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -59,8 +59,8 @@ namespace Attack_ATMB
                 Console.WriteLine(g.Message);
             }
             string str = ""; //khai bao chuoi
-            int a1,b1,c1,d1,e1,f1,g1,h1,i1,j1,k1,l1,m1,n1,o1,p1,q1,r1,s1,t1,u1,v1,w1,x1,y1,z1, idem;
-            a1=b1=c1=d1=e1=f1=g1=h1=i1=j1=k1=l1=m1=n1=o1=p1=q1=r1=s1=t1=u1=v1=w1=x1=y1=z1=0;
+            int a1, b1, c1, d1, e1, f1, g1, h1, i1, j1, k1, l1, m1, n1, o1, p1, q1, r1, s1, t1, u1, v1, w1, x1, y1, z1, idem;
+            a1 = b1 = c1 = d1 = e1 = f1 = g1 = h1 = i1 = j1 = k1 = l1 = m1 = n1 = o1 = p1 = q1 = r1 = s1 = t1 = u1 = v1 = w1 = x1 = y1 = z1 = 0;
             char[] arr1;
             int l2 = 0;
             l2 = string1.Length;
@@ -197,8 +197,8 @@ namespace Attack_ATMB
             }
             float demtongsochu = 0;
             demtongsochu = a1 + b1 + c1 + d1 + e1 + f1 + g1 + h1 + i1 + j1 + k1 + l1 + m1 + n1 + o1 + p1 + q1 + r1 + s1 + t1 + u1 + v1 + w1 + x1 + y1 + z1;
-            
-            float  a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l3, m2, n2, o2, p2, q2, r2, s2, t2, u2, v2, w2, x2, y2, z2;
+
+            float a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, l3, m2, n2, o2, p2, q2, r2, s2, t2, u2, v2, w2, x2, y2, z2;
             a2 = a1 / demtongsochu;
             b2 = b1 / demtongsochu;
             c2 = c1 / demtongsochu;
@@ -226,108 +226,115 @@ namespace Attack_ATMB
             y2 = y1 / demtongsochu;
             z2 = z1 / demtongsochu;
             //anh chon duong dan tuyet doi,ghi ra file
-            FileStream myFile = new FileStream(@"D:\xuatthongke.txt", FileMode.Append);
+
+            FileStream myFile = new FileStream(@"./Learn-09/xuatthongke.txt", FileMode.Create);
             BinaryWriter brFile = new BinaryWriter(myFile);
+
             brFile.Write("chu a :" + a1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu b :" + b1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu c :" + c1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu d :" + d1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu e :" + e1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu f :" + f1);
-            brFile.Write("\n");
-
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu g :" + g1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu h :" + h1);
-            brFile.Write("\n");
-           
-
-   
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu i :" + i1);
-            brFile.Write("\n");
-
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu j :" + j1);
-            brFile.Write("\n");
-
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu k :" + k1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
 
             brFile.Write("chu l :" + l1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
 
             brFile.Write("chu m :" + m1);
-            brFile.Write("\n");
+            brFile.Write(Environment.NewLine);
 
             brFile.Write("chu n :" + n1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu 0 :" + o1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu p :" + p1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu q :" + q1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu r :" + r1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu x :" + x1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu t :" + t1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu u :" + u1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu w :" + w1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu x :" + x1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu y :" + y1);
+            brFile.Write(Environment.NewLine);
             brFile.Write("chu z :" + z1);
             brFile.Write("tong so chu  :" + demtongsochu);
-            brFile.Write("\n");
-            brFile.Write("ty le chu a:" + a2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu b:" + b2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu c:" + c2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu d:" + d2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu e:" + e2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu f:" + f2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu g:" + g2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu h:" + h2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu i:" + i2 + "%");
-            brFile.Write("\n");
-            brFile.Write("tỉ lệ chữ j:" +j2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu k" + k2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu l" + l3 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu m" + m2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu n" + n2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu o" + o2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu p" + p2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu q" + q2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu r" + r2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu s" + s2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu t" + t2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu u" + u2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu v" + v2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu w" + w2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu x" + x2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu y" + y2 + "%");
-            brFile.Write("\n");
-            brFile.Write("ty le chu z" + z2 + "%");
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu a : " + a2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu b : " + b2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu c : " + c2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu d : " + d2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu e : " + e2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu f : " + f2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu g : " + g2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu h : " + h2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu i : " + i2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("tỉ lệ chữ j : " + j2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu k : " + k2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu l : " + l3);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu m : " + m2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu n : " + n2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu o : " + o2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu p : " + p2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu q : " + q2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu r : " + r2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu s : " + s2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu t : " + t2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu u : " + u2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu v : " + v2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu w : " + w2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu x : " + x2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu y : " + y2);
+            brFile.Write(Environment.NewLine);
+            brFile.Write("ty le chu z : " + z2);
             brFile.Close();
             myFile.Close();
         }

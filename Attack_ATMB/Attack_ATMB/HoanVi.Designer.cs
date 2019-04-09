@@ -40,25 +40,25 @@
             this.txtBefore = new System.Windows.Forms.TextBox();
             this.txtAfter = new System.Windows.Forms.TextBox();
             this.btnPickFile = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnFileExecute = new System.Windows.Forms.Button();
+            this.rdbChallenge = new System.Windows.Forms.RadioButton();
+            this.rdbEnc = new System.Windows.Forms.RadioButton();
+            this.rdbInput = new System.Windows.Forms.RadioButton();
             this.btnClear = new System.Windows.Forms.Button();
             this.txtChallenge = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnRandom = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.txtChallengeK = new System.Windows.Forms.TextBox();
             this.btnChallengeKSelect = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnFileExecute = new System.Windows.Forms.Button();
-            this.rdbInput = new System.Windows.Forms.RadioButton();
-            this.rdbEnc = new System.Windows.Forms.RadioButton();
-            this.rdbChallenge = new System.Windows.Forms.RadioButton();
-            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -210,6 +210,70 @@
             this.btnPickFile.UseVisualStyleBackColor = true;
             this.btnPickFile.Click += new System.EventHandler(this.btnPickFile_Click);
             // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 2;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Controls.Add(this.rdbChallenge, 0, 2);
+            this.tableLayoutPanel3.Controls.Add(this.rdbEnc, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.rdbInput, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btnFileExecute, 1, 0);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(438, 196);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 3;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(429, 187);
+            this.tableLayoutPanel3.TabIndex = 9;
+            // 
+            // btnFileExecute
+            // 
+            this.btnFileExecute.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnFileExecute.Location = new System.Drawing.Point(217, 3);
+            this.btnFileExecute.Name = "btnFileExecute";
+            this.tableLayoutPanel3.SetRowSpan(this.btnFileExecute, 3);
+            this.btnFileExecute.Size = new System.Drawing.Size(209, 181);
+            this.btnFileExecute.TabIndex = 3;
+            this.btnFileExecute.Text = "Xuất file";
+            this.btnFileExecute.UseVisualStyleBackColor = true;
+            this.btnFileExecute.Click += new System.EventHandler(this.btnFileExecute_Click);
+            // 
+            // rdbChallenge
+            // 
+            this.rdbChallenge.AutoSize = true;
+            this.rdbChallenge.Location = new System.Drawing.Point(3, 127);
+            this.rdbChallenge.Name = "rdbChallenge";
+            this.rdbChallenge.Size = new System.Drawing.Size(202, 29);
+            this.rdbChallenge.TabIndex = 4;
+            this.rdbChallenge.Text = "Nhập file challenge";
+            this.rdbChallenge.UseVisualStyleBackColor = true;
+            // 
+            // rdbEnc
+            // 
+            this.rdbEnc.AutoSize = true;
+            this.rdbEnc.Location = new System.Drawing.Point(3, 65);
+            this.rdbEnc.Name = "rdbEnc";
+            this.rdbEnc.Size = new System.Drawing.Size(203, 29);
+            this.rdbEnc.TabIndex = 0;
+            this.rdbEnc.Text = "Nhập file bị mã hóa";
+            this.rdbEnc.UseVisualStyleBackColor = true;
+            this.rdbEnc.CheckedChanged += new System.EventHandler(this.rdbNhap_CheckedChanged);
+            // 
+            // rdbInput
+            // 
+            this.rdbInput.AutoSize = true;
+            this.rdbInput.Checked = true;
+            this.rdbInput.Location = new System.Drawing.Point(3, 3);
+            this.rdbInput.Name = "rdbInput";
+            this.rdbInput.Size = new System.Drawing.Size(160, 29);
+            this.rdbInput.TabIndex = 5;
+            this.rdbInput.TabStop = true;
+            this.rdbInput.Text = "Nhập file input";
+            this.rdbInput.UseVisualStyleBackColor = true;
+            // 
             // btnClear
             // 
             this.btnClear.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -284,6 +348,22 @@
             this.btnRandom.UseVisualStyleBackColor = true;
             this.btnRandom.Click += new System.EventHandler(this.btnRandom_Click);
             // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel5.Controls.Add(this.txtChallengeK, 0, 1);
+            this.tableLayoutPanel5.Controls.Add(this.btnChallengeKSelect, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(146, 3);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(137, 87);
+            this.tableLayoutPanel5.TabIndex = 4;
+            // 
             // txtChallengeK
             // 
             this.txtChallengeK.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -315,86 +395,6 @@
             this.openFileDialog1.ShowReadOnly = true;
             this.openFileDialog1.Title = "Tìm kiếm tập tin";
             // 
-            // btnFileExecute
-            // 
-            this.btnFileExecute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnFileExecute.Location = new System.Drawing.Point(217, 3);
-            this.btnFileExecute.Name = "btnFileExecute";
-            this.tableLayoutPanel3.SetRowSpan(this.btnFileExecute, 3);
-            this.btnFileExecute.Size = new System.Drawing.Size(209, 181);
-            this.btnFileExecute.TabIndex = 3;
-            this.btnFileExecute.Text = "Xuất file";
-            this.btnFileExecute.UseVisualStyleBackColor = true;
-            this.btnFileExecute.Click += new System.EventHandler(this.btnFileExecute_Click);
-            // 
-            // rdbInput
-            // 
-            this.rdbInput.AutoSize = true;
-            this.rdbInput.Checked = true;
-            this.rdbInput.Location = new System.Drawing.Point(3, 3);
-            this.rdbInput.Name = "rdbInput";
-            this.rdbInput.Size = new System.Drawing.Size(160, 29);
-            this.rdbInput.TabIndex = 5;
-            this.rdbInput.TabStop = true;
-            this.rdbInput.Text = "Nhập file input";
-            this.rdbInput.UseVisualStyleBackColor = true;
-            // 
-            // rdbEnc
-            // 
-            this.rdbEnc.AutoSize = true;
-            this.rdbEnc.Location = new System.Drawing.Point(3, 65);
-            this.rdbEnc.Name = "rdbEnc";
-            this.rdbEnc.Size = new System.Drawing.Size(203, 29);
-            this.rdbEnc.TabIndex = 0;
-            this.rdbEnc.Text = "Nhập file bị mã hóa";
-            this.rdbEnc.UseVisualStyleBackColor = true;
-            this.rdbEnc.CheckedChanged += new System.EventHandler(this.rdbNhap_CheckedChanged);
-            // 
-            // rdbChallenge
-            // 
-            this.rdbChallenge.AutoSize = true;
-            this.rdbChallenge.Location = new System.Drawing.Point(3, 127);
-            this.rdbChallenge.Name = "rdbChallenge";
-            this.rdbChallenge.Size = new System.Drawing.Size(202, 29);
-            this.rdbChallenge.TabIndex = 4;
-            this.rdbChallenge.Text = "Nhập file challenge";
-            this.rdbChallenge.UseVisualStyleBackColor = true;
-            // 
-            // tableLayoutPanel3
-            // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Controls.Add(this.rdbChallenge, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.rdbEnc, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.rdbInput, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.btnFileExecute, 1, 0);
-            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(438, 196);
-            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(429, 187);
-            this.tableLayoutPanel3.TabIndex = 9;
-            // 
-            // tableLayoutPanel5
-            // 
-            this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel5.Controls.Add(this.txtChallengeK, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.btnChallengeKSelect, 0, 0);
-            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(146, 3);
-            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 2;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(137, 87);
-            this.tableLayoutPanel5.TabIndex = 4;
-            // 
             // HoanVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -407,9 +407,9 @@
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
             this.ResumeLayout(false);
