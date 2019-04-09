@@ -14,7 +14,7 @@ namespace Attack_ATMB
     public partial class DiChuyen : Form
     {
         int dichChuyen_Key = 0;
-        string dichChuyen_Z = "aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\\";
+        string dichChuyen_Z = @"aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\.";
         string string_Z_giaima;
         string inputMahoa;
         string inputGiaima;
@@ -118,16 +118,16 @@ namespace Attack_ATMB
             {
                 Tuple<string, string, string, string> readFile = FileHelper.ReadFileEnc(@"" + txtPathInputGiaiMa.Text + "");
                 string_Z_giaima = readFile.Item2;
-                txtKeyGiaiMa.Text = readFile.Item3;
+                mnrKeyGiaiMa.Text = readFile.Item3;
                 inputGiaima = readFile.Item4;
             }
-            if(txtPathInputGiaiMa.Text.Contains("Challenge"))
+            if (txtPathInputGiaiMa.Text.Contains("Challenge"))
             {
                 Tuple<string, string, string> readFileChallenge = FileHelper.ReadFileChallenge(openFileDialog1.FileName);
                 string_Z_giaima = readFileChallenge.Item2;
                 inputGiaima = readFileChallenge.Item3;
             }
-            
+
         }
 
         private void btnGiaiMaFile_Click(object sender, EventArgs e)
@@ -135,9 +135,9 @@ namespace Attack_ATMB
             if (txtPathInputGiaiMa.Text != "")
             {
 
-                if (txtKeyGiaiMa.Text != "")
+                if (mnrKeyGiaiMa.Text != "")
                 {
-                    dichChuyen_Key = int.Parse(txtKeyGiaiMa.Text);
+                    dichChuyen_Key = int.Parse(mnrKeyGiaiMa.Text);
                     string dichChuyen_Input = inputGiaima;
                     string dungluong = filenameinputGiaima.Split(new char[] { '_' })[1];
                     filenameoutputGiaima = "Decrypt_" + dungluong + "_11.txt";
@@ -170,6 +170,38 @@ namespace Attack_ATMB
         {
             System.Diagnostics.Process.Start(@"" + filenameoutputGiaimaChallenge + "");
 
+        }
+
+        private void txtKeyMahoa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtKeyGiaiMa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }
