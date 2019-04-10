@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.rdbMaHoa = new System.Windows.Forms.RadioButton();
+            this.rdbGiaiMa = new System.Windows.Forms.RadioButton();
+            this.lbZ = new System.Windows.Forms.Label();
+            this.txtZ = new System.Windows.Forms.TextBox();
+            this.lbK = new System.Windows.Forms.Label();
+            this.txtK = new System.Windows.Forms.TextBox();
+            this.btnExecute = new System.Windows.Forms.Button();
             this.txtBefore = new System.Windows.Forms.TextBox();
             this.txtAfter = new System.Windows.Forms.TextBox();
             this.btnPickFile = new System.Windows.Forms.Button();
@@ -47,19 +55,11 @@
             this.txtChallengeK = new System.Windows.Forms.TextBox();
             this.btnChallengeKSelect = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.rdbMaHoa = new System.Windows.Forms.RadioButton();
-            this.rdbGiaiMa = new System.Windows.Forms.RadioButton();
-            this.lbZ = new System.Windows.Forms.Label();
-            this.txtZ = new System.Windows.Forms.TextBox();
-            this.lbK = new System.Windows.Forms.Label();
-            this.txtK = new System.Windows.Forms.TextBox();
-            this.btnExecute = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel6.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            this.tableLayoutPanel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -86,6 +86,97 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1307, 579);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // tableLayoutPanel6
+            // 
+            this.tableLayoutPanel6.ColumnCount = 2;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.Controls.Add(this.rdbMaHoa, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.rdbGiaiMa, 1, 0);
+            this.tableLayoutPanel6.Controls.Add(this.lbZ, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.txtZ, 1, 1);
+            this.tableLayoutPanel6.Controls.Add(this.lbK, 0, 2);
+            this.tableLayoutPanel6.Controls.Add(this.txtK, 1, 2);
+            this.tableLayoutPanel6.Controls.Add(this.btnExecute, 0, 3);
+            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel6.Location = new System.Drawing.Point(438, 3);
+            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
+            this.tableLayoutPanel6.RowCount = 4;
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(429, 252);
+            this.tableLayoutPanel6.TabIndex = 14;
+            // 
+            // rdbMaHoa
+            // 
+            this.rdbMaHoa.AutoSize = true;
+            this.rdbMaHoa.Checked = true;
+            this.rdbMaHoa.Location = new System.Drawing.Point(3, 3);
+            this.rdbMaHoa.Name = "rdbMaHoa";
+            this.rdbMaHoa.Size = new System.Drawing.Size(103, 29);
+            this.rdbMaHoa.TabIndex = 0;
+            this.rdbMaHoa.TabStop = true;
+            this.rdbMaHoa.Text = "Mã hóa";
+            this.rdbMaHoa.UseVisualStyleBackColor = true;
+            // 
+            // rdbGiaiMa
+            // 
+            this.rdbGiaiMa.AutoSize = true;
+            this.rdbGiaiMa.Location = new System.Drawing.Point(217, 3);
+            this.rdbGiaiMa.Name = "rdbGiaiMa";
+            this.rdbGiaiMa.Size = new System.Drawing.Size(103, 29);
+            this.rdbGiaiMa.TabIndex = 1;
+            this.rdbGiaiMa.Text = "Giải mã";
+            this.rdbGiaiMa.UseVisualStyleBackColor = true;
+            // 
+            // lbZ
+            // 
+            this.lbZ.AutoSize = true;
+            this.lbZ.Location = new System.Drawing.Point(3, 35);
+            this.lbZ.Name = "lbZ";
+            this.lbZ.Size = new System.Drawing.Size(24, 25);
+            this.lbZ.TabIndex = 2;
+            this.lbZ.Text = "Z";
+            // 
+            // txtZ
+            // 
+            this.txtZ.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtZ.Location = new System.Drawing.Point(217, 38);
+            this.txtZ.Name = "txtZ";
+            this.txtZ.Size = new System.Drawing.Size(209, 29);
+            this.txtZ.TabIndex = 5;
+            // 
+            // lbK
+            // 
+            this.lbK.AutoSize = true;
+            this.lbK.Location = new System.Drawing.Point(3, 70);
+            this.lbK.Name = "lbK";
+            this.lbK.Size = new System.Drawing.Size(26, 25);
+            this.lbK.TabIndex = 3;
+            this.lbK.Text = "K";
+            // 
+            // txtK
+            // 
+            this.txtK.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtK.Location = new System.Drawing.Point(217, 73);
+            this.txtK.Name = "txtK";
+            this.txtK.Size = new System.Drawing.Size(209, 29);
+            this.txtK.TabIndex = 4;
+            // 
+            // btnExecute
+            // 
+            this.tableLayoutPanel6.SetColumnSpan(this.btnExecute, 2);
+            this.btnExecute.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnExecute.Location = new System.Drawing.Point(3, 108);
+            this.btnExecute.Name = "btnExecute";
+            this.btnExecute.Size = new System.Drawing.Size(423, 141);
+            this.btnExecute.TabIndex = 4;
+            this.btnExecute.Text = "Thực thi";
+            this.btnExecute.UseVisualStyleBackColor = true;
+            this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
             // txtBefore
             // 
@@ -305,96 +396,6 @@
             this.openFileDialog1.ShowReadOnly = true;
             this.openFileDialog1.Title = "Tìm kiếm tập tin";
             // 
-            // tableLayoutPanel6
-            // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.Controls.Add(this.rdbMaHoa, 0, 0);
-            this.tableLayoutPanel6.Controls.Add(this.rdbGiaiMa, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.lbZ, 0, 1);
-            this.tableLayoutPanel6.Controls.Add(this.txtZ, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.lbK, 0, 2);
-            this.tableLayoutPanel6.Controls.Add(this.txtK, 1, 2);
-            this.tableLayoutPanel6.Controls.Add(this.btnExecute, 0, 3);
-            this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel6.Location = new System.Drawing.Point(438, 3);
-            this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 4;
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(429, 252);
-            this.tableLayoutPanel6.TabIndex = 14;
-            // 
-            // rdbMaHoa
-            // 
-            this.rdbMaHoa.AutoSize = true;
-            this.rdbMaHoa.Checked = true;
-            this.rdbMaHoa.Location = new System.Drawing.Point(3, 3);
-            this.rdbMaHoa.Name = "rdbMaHoa";
-            this.rdbMaHoa.Size = new System.Drawing.Size(103, 29);
-            this.rdbMaHoa.TabIndex = 0;
-            this.rdbMaHoa.TabStop = true;
-            this.rdbMaHoa.Text = "Mã hóa";
-            this.rdbMaHoa.UseVisualStyleBackColor = true;
-            // 
-            // rdbGiaiMa
-            // 
-            this.rdbGiaiMa.AutoSize = true;
-            this.rdbGiaiMa.Location = new System.Drawing.Point(217, 3);
-            this.rdbGiaiMa.Name = "rdbGiaiMa";
-            this.rdbGiaiMa.Size = new System.Drawing.Size(103, 29);
-            this.rdbGiaiMa.TabIndex = 1;
-            this.rdbGiaiMa.Text = "Giải mã";
-            this.rdbGiaiMa.UseVisualStyleBackColor = true;
-            // 
-            // lbZ
-            // 
-            this.lbZ.AutoSize = true;
-            this.lbZ.Location = new System.Drawing.Point(3, 35);
-            this.lbZ.Name = "lbZ";
-            this.lbZ.Size = new System.Drawing.Size(24, 25);
-            this.lbZ.TabIndex = 2;
-            this.lbZ.Text = "Z";
-            // 
-            // txtZ
-            // 
-            this.txtZ.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtZ.Location = new System.Drawing.Point(217, 38);
-            this.txtZ.Name = "txtZ";
-            this.txtZ.Size = new System.Drawing.Size(209, 29);
-            this.txtZ.TabIndex = 5;
-            // 
-            // lbK
-            // 
-            this.lbK.AutoSize = true;
-            this.lbK.Location = new System.Drawing.Point(3, 70);
-            this.lbK.Name = "lbK";
-            this.lbK.Size = new System.Drawing.Size(26, 25);
-            this.lbK.TabIndex = 3;
-            this.lbK.Text = "K";
-            // 
-            // txtK
-            // 
-            this.txtK.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtK.Location = new System.Drawing.Point(217, 73);
-            this.txtK.Name = "txtK";
-            this.txtK.Size = new System.Drawing.Size(209, 29);
-            this.txtK.TabIndex = 4;
-            // 
-            // btnExecute
-            // 
-            this.tableLayoutPanel6.SetColumnSpan(this.btnExecute, 2);
-            this.btnExecute.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExecute.Location = new System.Drawing.Point(3, 108);
-            this.btnExecute.Name = "btnExecute";
-            this.btnExecute.Size = new System.Drawing.Size(423, 141);
-            this.btnExecute.TabIndex = 4;
-            this.btnExecute.Text = "Thực thi";
-            this.btnExecute.UseVisualStyleBackColor = true;
-            // 
             // HoanVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
@@ -405,13 +406,13 @@
             this.Text = "HoanVi";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel6.ResumeLayout(false);
+            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.ResumeLayout(false);
 
         }
