@@ -48,10 +48,10 @@ namespace Attack_ATMB
                 Console.WriteLine(g.Message);
             }
             //sao chep 
-            string stringz = @"aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\.";
-
-            string tr0;
+            string stringz = @"abcdefghijklmnopqrstuvwxyz";
             int t0 = 0;
+            string tr0;
+           
             tr0 = Ceasar.Decipher(string1, t0, stringz);
             string tr1 = "";
             tr1 = Ceasar.Decipher(string1, 1, stringz);
@@ -106,7 +106,32 @@ namespace Attack_ATMB
             tr25 = Ceasar.Decipher(string1, 25, stringz);
             string tr26 = "";
             tr26 = Ceasar.Decipher(string1, 26, stringz);
-            listBox1.Text = tr0 + tr1 + tr2 + tr3 + tr4 + tr5 + tr6 + tr7 + tr8 + tr9 + tr10 + tr11 + tr12 + tr13 + tr14 + tr15 + tr16 + tr17 + tr18 + tr19 + tr20 + tr21 + tr22 + tr23 + tr24 + tr25 + tr26;
+            textBox2.Text = tr0;
+            textBox3.Text = tr1;
+            textBox4.Text = tr2;
+            textBox5.Text = tr3;
+            textBox6.Text = tr4;
+            textBox7.Text = tr5;
+            textBox8.Text = tr6;
+            textBox9.Text = tr7;
+            textBox10.Text = tr8;
+            textBox11.Text = tr9;
+            textBox12.Text = tr10;
+            textBox13.Text = tr11;
+            textBox14.Text = tr12;
+            textBox15.Text = tr13;
+            textBox16.Text = tr14;
+            textBox17.Text = tr16;
+            textBox18.Text = tr17;
+            textBox19.Text = tr18;
+            textBox20.Text = tr19;
+            textBox21.Text = tr20;
+            textBox22.Text = tr21;
+            textBox23.Text = tr22;
+            textBox24.Text = tr23;
+            textBox25.Text = tr24;
+            textBox26.Text = tr25;
+            textBox27.Text = tr26;
         }
     }
 }

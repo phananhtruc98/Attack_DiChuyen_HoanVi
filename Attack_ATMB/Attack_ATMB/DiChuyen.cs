@@ -13,8 +13,9 @@ namespace Attack_ATMB
 {
     public partial class DiChuyen : Form
     {
-        int dichChuyen_Key = 0;
-        string dichChuyen_Z = @"aáàạảãăắằặẳẵâấầậẩẫbcdđeéẹẻẽêếềệểễfghiíìịỉĩjklmnoóòọỏõôốồộổỗơớờợởỡpqrstuúùụủũưứừựửữvwxyýỳỵỷỹAÁÀẠẢÃĂẮẰẶẲẴÂẤẦẬẨẪBCDĐEÉẸẺẼÊẾỀỆỂỄFGHIÍÌỊỈĨJKLMNOÓÒỌỎÕÔỐỒỘỔỖƠỚỜỢỞỠPQRSTUÚÙỤỦŨƯỨỪỰỬỮVWXYÝỲỴỶỸ0123456789`~!@#$%^&*()\.";
+        
+        int dichChuyen_Key = 3;
+        string dichChuyen_Z = @"abcdefghijklmnopqrstuvwxyz";
         string string_Z_giaima;
         string inputMahoa;
         string inputGiaima;
@@ -30,19 +31,26 @@ namespace Attack_ATMB
         {
 
             InitializeComponent();
+            txtZ.Text = dichChuyen_Z;
 
         }
 
 
         private void btnMaHoa_Click_1(object sender, EventArgs e)
         {
-
-            dichChuyen_Key = 3;
+           
+            string t = inputkhoa.Text;
+            int key = int.Parse(t);
+           
+            dichChuyen_Key = key;
             OutputText.Text = Ceasar.Encipher(InputText.Text, dichChuyen_Key, dichChuyen_Z);
         }
 
         private void btnGiaiMa_Click(object sender, EventArgs e)
         {
+            string t = inputkhoa.Text;
+            int key = int.Parse(t);
+            dichChuyen_Key = key;
             OutputText.Text = Ceasar.Decipher(InputText.Text, dichChuyen_Key, dichChuyen_Z);
         }
 
