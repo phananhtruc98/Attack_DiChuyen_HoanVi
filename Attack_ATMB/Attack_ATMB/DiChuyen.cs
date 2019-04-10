@@ -13,10 +13,9 @@ namespace Attack_ATMB
 {
     public partial class DiChuyen : Form
     {
-        
-        int dichChuyen_Key = 3;
-        string dichChuyen_Z = @"abcdefghijklmnopqrstuvwxyz";
-        string string_Z_giaima;
+
+        int dichChuyen_Key = 0;
+        string dichChuyen_Z = "";
         string inputMahoa;
         string inputGiaima;
         string filenameinputMahoa;
@@ -35,22 +34,34 @@ namespace Attack_ATMB
 
         }
 
-
+        //abcdefghijklmnopqrstuvwxyz
         private void btnMaHoa_Click_1(object sender, EventArgs e)
         {
-           
-            string t = inputkhoa.Text;
-            int key = int.Parse(t);
-           
-            dichChuyen_Key = key;
+            if (txtK.Text != "" && txtZ.Text != "")
+            {
+                dichChuyen_Key = int.Parse(txtK.Text);
+                dichChuyen_Z = txtZ.Text;
+            }
+            else
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin!!");
+                return;
+            }
             OutputText.Text = Ceasar.Encipher(InputText.Text, dichChuyen_Key, dichChuyen_Z);
         }
 
         private void btnGiaiMa_Click(object sender, EventArgs e)
         {
-            string t = inputkhoa.Text;
-            int key = int.Parse(t);
-            dichChuyen_Key = key;
+            if (txtK.Text != "" && txtZ.Text != "")
+            {
+                dichChuyen_Key = int.Parse(txtK.Text);
+                dichChuyen_Z = txtZ.Text;
+            }
+            else
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin!!");
+                return;
+            }
             OutputText.Text = Ceasar.Decipher(InputText.Text, dichChuyen_Key, dichChuyen_Z);
         }
 
@@ -60,6 +71,7 @@ namespace Attack_ATMB
             {
                 txtPathInputMaHoa.Text = openFileDialog1.FileName;
                 filenameinputMahoa = System.IO.Path.GetFileName(@"" + txtPathInputMaHoa.Text + "");
+
             }
             else
             {
@@ -74,9 +86,10 @@ namespace Attack_ATMB
             if (txtPathInputMaHoa.Text != "")
             {
 
-                if (txtKeyMahoa.Text != "")
+                if (txtKeyMahoa.Text != "" && txtZMahoa.Text != "")
                 {
                     dichChuyen_Key = int.Parse(txtKeyMahoa.Text);
+                    dichChuyen_Z = txtZMahoa.Text;
                     string dichChuyen_Input = inputMahoa;
                     string dungluong = filenameinputMahoa.Split(new char[] { '_' })[1];
                     filenameoutputMahoa = "Enc_" + dungluong + "_11.txt";
@@ -89,7 +102,8 @@ namespace Attack_ATMB
                 }
                 else
                 {
-                    MessageBox.Show("Chưa nhập key!!!");
+                    MessageBox.Show("Chưa nhập đủ thông tin!!!");
+                    return;
                 }
             }
             else
@@ -125,14 +139,16 @@ namespace Attack_ATMB
             if (txtPathInputGiaiMa.Text.Contains("Enc"))
             {
                 Tuple<string, string, string, string> readFile = FileHelper.ReadFileEnc(@"" + txtPathInputGiaiMa.Text + "");
-                string_Z_giaima = readFile.Item2;
+                txtZGiaima.Text = readFile.Item2;
+                dichChuyen_Z = txtZGiaima.Text;
                 mnrKeyGiaiMa.Text = readFile.Item3;
                 inputGiaima = readFile.Item4;
             }
             if (txtPathInputGiaiMa.Text.Contains("Challenge"))
             {
                 Tuple<string, string, string> readFileChallenge = FileHelper.ReadFileChallenge(openFileDialog1.FileName);
-                string_Z_giaima = readFileChallenge.Item2;
+                txtZGiaima.Text = readFileChallenge.Item2;
+                dichChuyen_Z = txtZGiaima.Text;
                 inputGiaima = readFileChallenge.Item3;
             }
 
@@ -143,23 +159,23 @@ namespace Attack_ATMB
             if (txtPathInputGiaiMa.Text != "")
             {
 
-                if (mnrKeyGiaiMa.Text != "")
+                if (mnrKeyGiaiMa.Text != "" || txtZGiaima.Text != "")
                 {
                     dichChuyen_Key = int.Parse(mnrKeyGiaiMa.Text);
                     string dichChuyen_Input = inputGiaima;
                     string dungluong = filenameinputGiaima.Split(new char[] { '_' })[1];
                     filenameoutputGiaima = "Decrypt_" + dungluong + "_11.txt";
                     filenameoutputGiaimaChallenge = "Decrypt_Challenge" + dungluong + "_11.txt";
-                    OutputText.Text = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, string_Z_giaima);
-                    outputGiaima = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, string_Z_giaima);
-                    FileHelper.WriteFile(@"" + filenameoutputGiaima + "", "Di chuyển", string_Z_giaima, dichChuyen_Key.ToString(), outputGiaima);
+                    OutputText.Text = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
+                    outputGiaima = Ceasar.Decipher(dichChuyen_Input, dichChuyen_Key, dichChuyen_Z);
+                    FileHelper.WriteFile(@"" + filenameoutputGiaima + "", "Di chuyển", dichChuyen_Z, dichChuyen_Key.ToString(), outputGiaima);
                     txtOutputGiaiMaName.Text = System.IO.Path.GetFileName(@"" + filenameoutputGiaima + "");
-                    FileHelper.WriteFile(@"" + filenameoutputGiaimaChallenge + "", "Di chuyển", string_Z_giaima, outputGiaima);
+                    FileHelper.WriteFile(@"" + filenameoutputGiaimaChallenge + "", "Di chuyển", dichChuyen_Z, outputGiaima);
                     txtOutputGiaiMaChallengeName.Text = System.IO.Path.GetFileName(@"" + filenameoutputGiaimaChallenge + "");
                 }
                 else
                 {
-                    MessageBox.Show("Chưa nhập key!!!");
+                    MessageBox.Show("Chưa nhập đủ thông tin!!!");
                 }
             }
             else
