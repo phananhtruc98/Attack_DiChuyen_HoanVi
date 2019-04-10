@@ -61,7 +61,7 @@ namespace Attack_ATMB
 
         private void tấnCôngToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TanCong hoanviMDIChild = new TanCong();
+            frmTanCong hoanviMDIChild = new frmTanCong();
             hoanviMDIChild.MdiParent = this;
             hoanviMDIChild.Show();
             hoanviMDIChild.WindowState = FormWindowState.Minimized;
