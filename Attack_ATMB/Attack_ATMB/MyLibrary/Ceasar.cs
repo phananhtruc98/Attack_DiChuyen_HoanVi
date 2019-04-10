@@ -42,6 +42,7 @@ namespace Attack_ATMB.MyLibrary
         }
         public static char Cipher(char ch, int key,string z)
         {
+            if (z.IndexOf(ch) < 0) return ch;
             int i = (z.IndexOf(ch) + key) < 0 ? (z.Length + z.IndexOf(ch) + key) % z.Length : (z.IndexOf(ch) + key) % z.Length;
             return (char)z[i];
         }
